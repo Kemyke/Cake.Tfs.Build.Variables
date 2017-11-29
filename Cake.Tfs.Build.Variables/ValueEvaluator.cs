@@ -4,7 +4,7 @@ using Cake.Core.Annotations;
 using System;
 using System.Text.RegularExpressions;
 
-namespace Cake.Tfs.VNext.Variables
+namespace Cake.Tfs.Build.Variables
 {
     public static class ValueEvaluator
     {
@@ -13,7 +13,17 @@ namespace Cake.Tfs.VNext.Variables
             return variableName.ToUpper().Replace(".", "_");
         }
 
-        private static string GetVnextVariableValue(ICakeContext context, string variableName)
+        private static string EvaluateVariable(ICakeContext context, string variableName)
+        {
+            return EvaluateVariable(context, variableName, false, null);
+        }
+
+        private static string EvaluateVariable(ICakeContext context, string variableName, string defaultValue)
+        {
+            return EvaluateVariable(context, variableName, true, defaultValue);
+        }
+
+        private static string EvaluateVariable(ICakeContext context, string variableName, bool hasDefaultValue, string defaultValue)
         {
             string envVariablename = EnvNameFromVariableName(variableName);
 
@@ -28,7 +38,14 @@ namespace Cake.Tfs.VNext.Variables
             }
             else
             {
-                throw new ArgumentException($"No argument found with name {variableName} and no environment variable found with name {envVariablename}!");
+                if (hasDefaultValue)
+                {
+                    return defaultValue;
+                }
+                else
+                {
+                    throw new ArgumentException($"No argument found with name {variableName} and no environment variable found with name {envVariablename}!");
+                }
             }
 
             return value;
@@ -41,7 +58,7 @@ namespace Cake.Tfs.VNext.Variables
 
             while (match.Success)
             {
-                string innerVarValue = GetVnextVariableValue(context, match.Groups[1].Value);
+                string innerVarValue = EvaluateVariable(context, match.Groups[1].Value);
 
                 value = value.Replace(match.Value, innerVarValue);
                 match = Regex.Match(value, variablepattern);
@@ -51,9 +68,19 @@ namespace Cake.Tfs.VNext.Variables
         }
 
         [CakeMethodAlias]
-        public static string EvaluateVnextVariable(this ICakeContext context, string variableName)
+        public static string EvaluateTfsBuildVariable(this ICakeContext context, string variableName)
         {
-            string value = GetVnextVariableValue(context, variableName);
+            string value = EvaluateVariable(context, variableName);
+
+            value = SubstituteNestedVariable(context, value);
+
+            return value;
+        }
+
+        [CakeMethodAlias]
+        public static string EvaluateTfsBuildVariable(this ICakeContext context, string variableName, string defaultValue)
+        {
+            string value = EvaluateVariable(context, variableName, defaultValue);
 
             value = SubstituteNestedVariable(context, value);
 

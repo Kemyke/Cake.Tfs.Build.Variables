@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <Version>1.0.5</Version>
+    <Description>Cake Build addon to evaluate Tfs Build (vNext) variables</Description>
+    <Copyright>Copyright 2017</Copyright>
+    <Authors>Attila Kemeny</Authors>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <PackageId>Cake.Tfs.Build.Variables</PackageId>
+    <PackageTags>Cake Build Tfs Vnext</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
