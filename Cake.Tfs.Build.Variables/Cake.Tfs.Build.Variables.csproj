@@ -5,7 +5,7 @@
     <Description>Cake Build addon to evaluate Tfs Build (vNext) variables</Description>
     <Copyright>Copyright 2017</Copyright>
     <Authors>Attila Kemeny</Authors>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Cake.Tfs.Build.Variables</PackageId>
     <PackageTags>Cake Build Tfs Vnext</PackageTags>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -14,8 +14,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Common" Version="0.23.0" />
-    <PackageReference Include="Cake.Core" Version="0.23.0" />
+    <PackageReference Include="Cake.Common" Version="0.26.0" />
+    <PackageReference Include="Cake.Core" Version="0.26.0" />
   </ItemGroup>
 
 </Project>
