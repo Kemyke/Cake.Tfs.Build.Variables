@@ -130,7 +130,10 @@ namespace Cake.Tfs.Build.Variables
         {
             string value = EvaluateVariable(context, variableName, defaultValue);
 
-            value = SubstituteNestedVariable(context, value);
+            if (value != null)
+            {
+                value = SubstituteNestedVariable(context, value);
+            }
 
             return value;
         }
