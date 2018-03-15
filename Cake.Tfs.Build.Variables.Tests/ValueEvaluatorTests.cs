@@ -30,6 +30,14 @@ namespace Cake.Tfs.Build.Variables.Tests
         }
 
         [Fact]
+        public void NonExistentValueWithNullDefaultValueTest()
+        {
+            var c = new TestCakeContext();
+            var value = TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test", null);
+            Assert.Null(value);
+        }
+
+        [Fact]
         public void ValueFromEnvTest()
         {
             Dictionary<string, string> envVars = new Dictionary<string, string>() { { "CAKE_VARIABLES_TEST", "testenvvalue" } };
