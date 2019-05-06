@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Version>0.0.7</Version>
@@ -14,8 +14,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Common" Version="0.26.0" />
-    <PackageReference Include="Cake.Core" Version="0.26.0" />
+    <PackageReference Include="Cake.Common" Version="0.33.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
