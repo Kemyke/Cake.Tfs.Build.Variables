@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.0.8</Version>
+    <Version>0.0.9</Version>
     <Description>Cake Build addon to evaluate Tfs Build (vNext) variables</Description>
     <Copyright>Copyright 2017</Copyright>
     <Authors>Attila Kemeny</Authors>
