@@ -1,0 +1,161 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.Tests\\Cake.Tfs.Build.Variables.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.Tests\\Cake.Tfs.Build.Variables.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.Tests\\Cake.Tfs.Build.Variables.Tests.csproj",
+        "projectName": "Cake.Tfs.Build.Variables.Tests",
+        "projectPath": "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.Tests\\Cake.Tfs.Build.Variables.Tests.csproj",
+        "packagesPath": "C:\\Users\\kemenya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kemenya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://pkgs.dev.azure.com/nexogendev/_packaging/Nexogen/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.csproj": {
+                "projectPath": "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Cake.Core": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.csproj": {
+      "version": "0.0.8",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.csproj",
+        "projectName": "Cake.Tfs.Build.Variables",
+        "projectPath": "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables.csproj",
+        "packagesPath": "C:\\Users\\kemenya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kemenya\\source\\repos\\Cake.Tfs.Build.Variables\\Cake.Tfs.Build.Variables\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kemenya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://pkgs.dev.azure.com/nexogendev/_packaging/Nexogen/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Cake.Common": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Cake.Core": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -36,6 +36,11 @@ namespace Cake.Tfs.Build.Variables
             return variableName.ToUpper().Replace(".", "_");
         }
 
+        private static string CakeV3NameFromVariableName(string variableName)
+        {
+            return variableName.Replace(".", "_");
+        }
+
         private static string EvaluateVariable(ICakeContext context, string variableName)
         {
             return EvaluateVariable(context, variableName, false, null);
@@ -49,11 +54,16 @@ namespace Cake.Tfs.Build.Variables
         private static string EvaluateVariable(ICakeContext context, string variableName, bool hasDefaultValue, string defaultValue)
         {
             string envVariablename = EnvNameFromVariableName(variableName);
+            string cakeV3VariableName = CakeV3NameFromVariableName(variableName);
 
             string value;
             if (context.HasArgument(variableName))
             {
                 value = context.Argument<string>(variableName);
+            } 
+            else if (context.HasArgument(cakeV3VariableName))
+            {
+                value = context.Argument<string>(cakeV3VariableName);
             }
             else if (context.HasEnvironmentVariable(envVariablename))
             {

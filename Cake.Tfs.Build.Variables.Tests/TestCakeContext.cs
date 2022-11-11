@@ -6,6 +6,9 @@ using Cake.Core.Diagnostics;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
 using System.Runtime.Versioning;
+using Cake.Core.Configuration;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace Cake.Tfs.Build.Variables.Tests
 {
@@ -29,6 +32,10 @@ namespace Cake.Tfs.Build.Variables.Tests
         public IRegistry Registry => throw new NotImplementedException();
 
         public IToolLocator Tools => throw new NotImplementedException();
+
+        public ICakeDataResolver Data => throw new NotImplementedException();
+
+        public ICakeConfiguration Configuration => throw new NotImplementedException();
     }
 
     public class TestArguments : ICakeArguments
@@ -41,6 +48,17 @@ namespace Cake.Tfs.Build.Variables.Tests
         public string GetArgument(string name)
         {
             return arguments[name];
+        }
+
+        public ICollection<string> GetArguments(string name)
+        {
+            return new List<string> { arguments[name] };
+
+        }
+
+        public IDictionary<string, ICollection<string>> GetArguments()
+        {
+            return arguments.ToDictionary(k => k.Key, v => (ICollection<string>)new List<string> { v.Value });
         }
 
         public bool HasArgument(string name)

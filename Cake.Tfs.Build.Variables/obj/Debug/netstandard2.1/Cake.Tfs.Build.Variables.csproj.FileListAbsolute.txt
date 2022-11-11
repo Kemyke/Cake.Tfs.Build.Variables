@@ -1,0 +1,12 @@
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\bin\Debug\netstandard2.1\Cake.Tfs.Build.Variables.deps.json
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\bin\Debug\netstandard2.1\Cake.Tfs.Build.Variables.dll
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\bin\Debug\netstandard2.1\Cake.Tfs.Build.Variables.pdb
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\bin\Debug\netstandard2.1\Cake.Tfs.Build.Variables.xml
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\obj\Debug\netstandard2.1\Cake.Tfs.Build.Variables.csproj.AssemblyReference.cache
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\obj\Debug\netstandard2.1\Cake.Tfs.Build.Variables.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\obj\Debug\netstandard2.1\Cake.Tfs.Build.Variables.AssemblyInfoInputs.cache
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\obj\Debug\netstandard2.1\Cake.Tfs.Build.Variables.AssemblyInfo.cs
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\obj\Debug\netstandard2.1\Cake.Tfs.Build.Variables.csproj.CoreCompileInputs.cache
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\obj\Debug\netstandard2.1\Cake.Tfs.Build.Variables.dll
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\obj\Debug\netstandard2.1\Cake.Tfs.Build.Variables.xml
+C:\Users\kemenya\source\repos\Cake.Tfs.Build.Variables\Cake.Tfs.Build.Variables\obj\Debug\netstandard2.1\Cake.Tfs.Build.Variables.pdb

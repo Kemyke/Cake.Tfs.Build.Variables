@@ -1,43 +1,44 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using Xunit;
 
 namespace Cake.Tfs.Build.Variables.Tests
 {
+    [TestClass]
     public class ValueEvaluatorTests
     {
-        [Fact]
+        [TestMethod]
         public void NonExistentValueTest()
         {
             try
             {
                 var c = new TestCakeContext();
                 TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test");
-                Assert.True(false);
+                Assert.IsTrue(false);
             }
             catch (ArgumentException)
             {
-                Assert.True(true);
+                Assert.IsTrue(true);
             }
         }
 
-        [Fact]
+        [TestMethod]
         public void NonExistentValueWithDefaultValueTest()
         {
             var c = new TestCakeContext();
             var value = TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test", "defval");
-            Assert.Equal("defval", value);
+            Assert.AreEqual("defval", value);
         }
 
-        [Fact]
+        [TestMethod]
         public void NonExistentValueWithNullDefaultValueTest()
         {
             var c = new TestCakeContext();
             var value = TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test", null);
-            Assert.Null(value);
+            Assert.IsNull(value);
         }
 
-        [Fact]
+        [TestMethod]
         public void ValueFromEnvTest()
         {
             Dictionary<string, string> envVars = new Dictionary<string, string>() { { "CAKE_VARIABLES_TEST", "testenvvalue" } };
@@ -45,10 +46,10 @@ namespace Cake.Tfs.Build.Variables.Tests
 
             var c = new TestCakeContext(envVars, args);
             var value = TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test");
-            Assert.Equal("testenvvalue", value);
+            Assert.AreEqual("testenvvalue", value);
         }
 
-        [Fact]
+        [TestMethod]
         public void ValueFromArgTest()
         {
             Dictionary<string, string> envVars = new Dictionary<string, string>();
@@ -56,10 +57,21 @@ namespace Cake.Tfs.Build.Variables.Tests
 
             var c = new TestCakeContext(envVars, args);
             var value = TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test");
-            Assert.Equal("testargvalue", value);
+            Assert.AreEqual("testargvalue", value);
         }
 
-        [Fact]
+        [TestMethod]
+        public void NewFormValueFromArgTest()
+        {
+            Dictionary<string, string> envVars = new Dictionary<string, string>();
+            Dictionary<string, string> args = new Dictionary<string, string>() { { "Cake_Variables_Test", "testargvalue" } };
+
+            var c = new TestCakeContext(envVars, args);
+            var value = TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test");
+            Assert.AreEqual("testargvalue", value);
+        }
+
+        [TestMethod]
         public void ValueFromEnvAndArgTest()
         {
             Dictionary<string, string> envVars = new Dictionary<string, string>() { { "CAKE_VARIABLES_TEST", "testenvvalue" } };
@@ -67,10 +79,10 @@ namespace Cake.Tfs.Build.Variables.Tests
 
             var c = new TestCakeContext(envVars, args);
             var value = TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test");
-            Assert.Equal("testargvalue", value);
+            Assert.AreEqual("testargvalue", value);
         }
 
-        [Fact]
+        [TestMethod]
         public void ValueFromEnvAndArgWithDefaultValueTest()
         {
             Dictionary<string, string> envVars = new Dictionary<string, string>() { { "CAKE_VARIABLES_TEST", "testenvvalue" } };
@@ -78,10 +90,10 @@ namespace Cake.Tfs.Build.Variables.Tests
 
             var c = new TestCakeContext(envVars, args);
             var value = TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test", "defval");
-            Assert.Equal("testargvalue", value);
+            Assert.AreEqual("testargvalue", value);
         }
 
-        [Fact]
+        [TestMethod]
         public void ChainedValueTest()
         {
             Dictionary<string, string> envVars = new Dictionary<string, string>() { { "CAKE_VARIABLES_TEST", "Test value: $(Cake.Variables.MoreTest)." }, { "CAKE_VARIABLES_MORETEST", "12345" } };
@@ -89,7 +101,7 @@ namespace Cake.Tfs.Build.Variables.Tests
 
             var c = new TestCakeContext(envVars, args);
             var value = TfsBuildVariablesAliases.EvaluateTfsBuildVariable(c, "Cake.Variables.Test");
-            Assert.Equal("Test value: 12345.", value);
+            Assert.AreEqual("Test value: 12345.", value);
         }
     }
 }
